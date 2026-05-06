@@ -4,7 +4,6 @@ const getToken = () => {
   return localStorage.getItem("token");
 };
 
-//to get all projects
 export const getProjects = async () => {
   const response = await fetch(`${BASE_URL}/projects`, {
     headers: {
@@ -15,7 +14,6 @@ export const getProjects = async () => {
   return response.json();
 };
 
-//to create new project
 export const createProject = async (data) => {
   const response = await fetch(`${BASE_URL}/projects`, {
     method: "POST",
@@ -29,7 +27,6 @@ export const createProject = async (data) => {
   return response.json();
 };
 
-// to get the project members
 export const getProjectMembers = async (projectId) => {
   const response = await fetch(`${BASE_URL}/projects/${projectId}/members`, {
     headers: {
@@ -40,7 +37,6 @@ export const getProjectMembers = async (projectId) => {
   return response.json();
 };
 
-// to add project members
 export const addMemberToProject = async (projectId, userId) => {
   const response = await fetch(`${BASE_URL}/projects/${projectId}/members`, {
     method: "POST",

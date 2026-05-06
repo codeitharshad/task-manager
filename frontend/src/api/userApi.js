@@ -4,7 +4,6 @@ const getToken = () => {
   return localStorage.getItem("token");
 };
 
-// to get all users
 export const getUsers = async () => {
   const response = await fetch(`${BASE_URL}/users`, {
     headers: {

@@ -4,7 +4,6 @@ const getToken = () => {
   return localStorage.getItem("token");
 };
 
-//to get task of perticular member
 export const getMyTasks = async () => {
   const response = await fetch(`${BASE_URL}/tasks/my`, {
     headers: {
@@ -15,7 +14,6 @@ export const getMyTasks = async () => {
   return response.json();
 };
 
-//to get tasks of pertucular project
 export const getTasksByProject = async (projectId) => {
   const response = await fetch(`${BASE_URL}/tasks/project/${projectId}`, {
     headers: {
@@ -26,7 +24,6 @@ export const getTasksByProject = async (projectId) => {
   return response.json();
 };
 
-//to create a new project
 export const createTask = async (data) => {
   const response = await fetch(`${BASE_URL}/tasks`, {
     method: "POST",
@@ -40,7 +37,6 @@ export const createTask = async (data) => {
   return response.json();
 };
 
-//to change the tasks status
 export const updateTaskStatus = async (taskId, status) => {
   const response = await fetch(`${BASE_URL}/tasks/${taskId}/status`, {
     method: "PATCH",
@@ -54,7 +50,6 @@ export const updateTaskStatus = async (taskId, status) => {
   return response.json();
 };
 
-//to delelte the task
 export const deleteTask = async (taskId) => {
   const response = await fetch(`${BASE_URL}/tasks/${taskId}`, {
     method: "DELETE",
