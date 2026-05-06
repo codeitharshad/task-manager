@@ -1,24 +1,28 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
+import LandingPage from "./pages/LandingPage";
 import LoginPage from "./pages/LoginPage";
-
 import RegisterPage from "./pages/RegisterPage";
 
 import AdminDashboard from "./pages/AdminDashboard";
-
 import MemberDashboard from "./pages/MemberDashboard";
-import AdminRoute from "./components/AdminRoute";
 
+import AdminRoute from "./components/AdminRoute";
 import MemberRoute from "./components/MemberRoute";
 
 function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<LoginPage />} />
+        {/* Landing Page */}
+        <Route path="/" element={<LandingPage />} />
+
+        {/* Auth Pages */}
+        <Route path="/login" element={<LoginPage />} />
 
         <Route path="/register" element={<RegisterPage />} />
 
+        {/* Admin Dashboard */}
         <Route
           path="/admin"
           element={
@@ -28,6 +32,7 @@ function App() {
           }
         />
 
+        {/* Member Dashboard */}
         <Route
           path="/member"
           element={
